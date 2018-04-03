@@ -1,0 +1,121 @@
+﻿@model ATM.Web.Models.LoginInfo
+@{
+    ViewData["Title"] = "Login";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+
+        <div class="alert alert-info">
+            <br />
+            <h4>Provide your 16 digit card number and 4 digit pin to log in.</h4>
+            <br />
+        </div>
+        <div id="Login" class="col-md-6">
+            <div class="row">
+                <label asp-for="LoginId" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="LoginId" class="form-control" placeholder="Please provide 16 digit Card Number" />
+                    <span asp-validation-for="LoginId" class="text-danger"></span>
+                    <br />
+                </div>
+            </div>
+            <div class="row">
+                <label asp-for="Password" class="col-md-4 control-label"></label>
+                <div class="col-md-8">
+                    <input asp-for="Password" class="form-control" placeholder="Please provide 4 digit Pin" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                    <br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 pull-right">
+                    <button type="submit" name="command" value="Submit" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    @foreach (var item in Model.SuccessMessage)
+    {
+        <div class="alert alert-success">
+            <strong>Success!</strong> @item.
+        </div>
+    }
+
+    @foreach (var item in Model.ErrorMesage)
+    {
+        <div class="alert alert-danger">
+            <strong>Error!</strong> @item.
+        </div>
+    }
+}
+
+<div col-md-12>
+    <h3>Credentials to be used</h3>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Account Type</th>
+                <th>Card Number</th>
+                <th>Pin Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Customer 1</td>
+                <td>Savings</td>
+                <td>1234567890123456</td>
+                <td>1234</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>2345678901234567</td>
+                <td>2345</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Cheque</td>
+                <td>5678901234567890</td>
+                <td>5678</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>6789012345678901</td>
+                <td>6789</td>
+            </tr>
+
+            <tr>
+                <td>Customer 2</td>
+                <td>Savings</td>
+                <td>3456789012345678</td>
+                <td>3456</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>4567890123456789</td>
+                <td>4567</td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+

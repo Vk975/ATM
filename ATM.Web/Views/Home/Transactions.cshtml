@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Transactions";
+}
+
+<div class="row">
+
+    <div class="alert alert-info">
+        <br />
+        <h4>Select savings or cheque account to check balance for the respective account.</h4>
+        <br />
+    </div>
+
+
+    <div class="col-md-12">
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <a asp-area="" asp-controller="Home" asp-action="Balance" asp-route-accType="Savings" style="min-width:200px;" class="btn btn-lg btn-primary">Savings</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a asp-area="" asp-controller="Home" asp-action="Balance" asp-route-accType="Cheque" style="min-width:200px;" class="btn btn-lg  btn-primary">Cheque</a>
+
+    </div>
+</div>
+

@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Balance";
+}
+
+
+@if (ViewBag.Balance != null)
+{
+
+    <div class="row">
+        <div class="alert alert-info">
+            <br />
+            <h3>Total available balance : $ @ViewBag.Balance</h3>
+            <br />
+
+            <h4>Click on Withdraw button to initiate a transaction. 
+            <br />
+            click Back to select another account.</h4>
+        </div>
+
+    </div>
+
+    <div class="col-md-12">
+        <a asp-area="" asp-controller="Home" asp-action="Withdraw" asp-route-accType="@ViewBag.AccountType" style="min-width:200px;" class="btn btn-lg  btn-primary">Withdraw</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a asp-area="" asp-controller="Home" asp-action="Transactions" style="min-width:200px;" class="btn btn-lg  btn-default">Back</a>
+
+    </div>
+}
+else
+{
+    <div class="row">
+        <div class="alert alert-info">
+            <br />
+            <h3> Account not available. Please select different account.</h3>
+            <br />
+        </div>
+
+    </div>
+    <div class="col-md-12">
+        <a asp-area="" asp-controller="Home" asp-action="Transactions" style="min-width:200px;" class="btn btn-lg  btn-default">Back</a>
+    </div>
+}
+
